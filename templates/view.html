@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Expenses</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>All Recorded Expenses</h1>
+    <table>
+        <tr>
+            <th>Date</th><th>Category</th><th>Amount</th>
+        </tr>
+        {% for e in expenses %}
+        <tr>
+            <td>{{ e[0] }}</td><td>{{ e[1] }}</td><td>₹{{ e[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h3>Total: ₹{{ total }}</h3>
+    <a href="/">← Back to Home</a>
+</body>
+</html>
